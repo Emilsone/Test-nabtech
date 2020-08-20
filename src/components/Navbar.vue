@@ -1,10 +1,10 @@
 <template>
   <nav>
-    <v-app-bar bg-color="white"  app>
+    <v-app-bar bg-color="white" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase "> 
+      <v-toolbar-title class="text-uppercase ">
         <v-avatar size="30">
-          <img src="/bank-logo.png" alt="" />
+          <img src="../assets/fcmb-logo.png" alt="" />
         </v-avatar>
         <span class="font-weight-light pl-4">FCMB: Mobile Banking</span>
       </v-toolbar-title>
@@ -19,11 +19,29 @@
         @click:append="search"
         class="hidden-sm-and-down border-radius"
       ></v-text-field> -->
+      <v-spacer></v-spacer>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on" class="mr-7">
+            <v-icon size="25">mdi-bell</v-icon></v-btn
+          >
+        </template>
+        <span>Notifications</span>
+      </v-tooltip>
+
+      <!-- <v-avatar> -->
+      <img src="../assets/owner.png" alt="" />
+      <!-- </v-avatar> -->
+      <!-- <v-avatar> -->
+      <img src="../assets/Vector.png" class="icon-image" alt="" />
+      <!-- </v-avatar> -->
+
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
           <v-btn text v-on="on">
-            <v-icon left>expand_more</v-icon>
+            <img src="../assets/Rectangle 4.png" class="icon-image" alt="" />
             <span>Menu</span>
+            <v-icon left>expand_more</v-icon>
           </v-btn>
         </template>
         <v-list flat>
@@ -43,11 +61,17 @@
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" dark app class=" darken-4" width="100">
+    <v-navigation-drawer
+      v-model="drawer"
+      dark
+      app
+      class=" darken-4"
+      width="100"
+    >
       <v-layout column align-center>
         <v-flex class="mt-5">
           <v-avatar size="30">
-            <img src="/img1.png" alt="" />
+            <img src="../assets/bank-logo.png" alt="" />
           </v-avatar>
           <!-- <p class="white--text subheading mt-1 text-center">Username</p> -->
         </v-flex>
@@ -64,7 +88,7 @@
           active-class="border"
         >
           <v-list-item-action>
-            <v-icon >{{ link.icon }}</v-icon>
+            <v-icon class="mx-auto">{{ link.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{ link.text }}</v-list-item-title>
@@ -81,7 +105,7 @@
           active-class="border"
         >
           <v-list-item-action>
-            <v-icon >{{ link.icon }}</v-icon>
+            <v-icon>{{ link.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{ link.text }}</v-list-item-title>
@@ -97,9 +121,9 @@ export default {
   data: () => ({
     drawer: true,
     links: [
-      { icon: "dashboard",  route: "/" },
-      { icon: "folder",  route: "/projects" },
-      { icon: "person",  route: "/team" },
+      { icon: "dashboard", route: "/" },
+      { icon: "folder", route: "/projects" },
+      { icon: "person", route: "/team" },
     ],
   }),
   //   components: {
@@ -113,5 +137,13 @@ export default {
 }
 .nav-drawer {
   background: #052231;
+}
+.icon-image {
+  padding-left: 90px;
+}
+@media (max-width: 768px) {
+  .icon-img {
+    visibility: hidden;
+  }
 }
 </style>

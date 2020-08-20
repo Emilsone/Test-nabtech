@@ -1,6 +1,5 @@
 <template>
   <div class="team">
-    <h1 class="subheading grey--text">Team</h1>
     <v-container>
       <v-layout  class="flex-card">
         <div class="link-text">
@@ -62,6 +61,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .column5 {
   background-color: #FFFFFF;
   width: 60%;
@@ -103,6 +103,9 @@ li{
   .section {
     flex-direction: column;
   }
+  .team{
+  overflow-x: scroll;
+}
 }
 .team{
   background-color: #F7F7F7;
