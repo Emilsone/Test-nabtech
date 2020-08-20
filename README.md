@@ -1,4 +1,4 @@
-# Vuetify - Vuejs - Dashboard Modern
+# Built with Vuejs and vuetify
 
 ## Project setup
 ```
